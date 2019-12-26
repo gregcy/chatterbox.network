@@ -1,0 +1,29 @@
+uuid: dfaf8f0a-ba2b-4a9c-b1cf-ab7bbb1c964a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_liquid_asset_type
+    - paragraphs.paragraphs_type.liquid_assets
+    - taxonomy.vocabulary.liquid_asset_type
+id: paragraph.liquid_assets.field_liquid_asset_type
+field_name: field_liquid_asset_type
+entity_type: paragraph
+bundle: liquid_assets
+label: 'Liquid Asset Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      liquid_asset_type: liquid_asset_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

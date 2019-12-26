@@ -1,0 +1,19 @@
+uuid: c7cd5c3e-730b-406b-b57e-010342ffa948
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_debt_type
+    - paragraphs.paragraphs_type.debts
+id: paragraph.debts.field_debt_type
+field_name: field_debt_type
+entity_type: paragraph
+bundle: debts
+label: 'Debt Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

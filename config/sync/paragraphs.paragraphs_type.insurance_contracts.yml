@@ -1,0 +1,9 @@
+uuid: 32afaf18-d13f-4cbd-b93a-79c8fa890b71
+langcode: en
+status: true
+dependencies: {  }
+id: insurance_contracts
+label: 'Insurance Contracts'
+icon_uuid: null
+description: 'An item to represent an Insurance Contract entry from a politicians property declaration'
+behavior_plugins: {  }

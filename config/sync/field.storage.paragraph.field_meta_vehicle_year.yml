@@ -1,0 +1,20 @@
+uuid: 76fbd155-b60f-42df-a6ff-a54a7b6a4540
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - paragraphs
+id: paragraph.field_meta_vehicle_year
+field_name: field_meta_vehicle_year
+entity_type: paragraph
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

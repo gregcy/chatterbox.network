@@ -1,0 +1,12 @@
+uuid: b9a8f5ec-1305-4a6e-9447-fe29fd3a7546
+langcode: en
+status: true
+dependencies: {  }
+id: taxonomy_migration
+label: 'Pothen Esxes Migration'
+description: 'Pothen Esxes Migration'
+source_type: 'Drupal 7'
+module: null
+shared_configuration:
+  source:
+    key: legacy

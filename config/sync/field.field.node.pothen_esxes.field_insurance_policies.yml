@@ -1,0 +1,52 @@
+uuid: a4c23678-9b01-4b5f-951e-add9a7021325
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_insurance_policies
+    - node.type.pothen_esxes
+    - paragraphs.paragraphs_type.insurance_contracts
+  module:
+    - entity_reference_revisions
+id: node.pothen_esxes.field_insurance_policies
+field_name: field_insurance_policies
+entity_type: node
+bundle: pothen_esxes
+label: 'Insurance Policies'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      insurance_contracts: insurance_contracts
+    target_bundles_drag_drop:
+      bank_deposits:
+        weight: 9
+        enabled: false
+      companies:
+        weight: 10
+        enabled: false
+      debts:
+        weight: 11
+        enabled: false
+      insurance_contracts:
+        enabled: true
+        weight: 12
+      liquid_assets:
+        weight: 13
+        enabled: false
+      previous_income:
+        weight: 14
+        enabled: false
+      property:
+        weight: 15
+        enabled: false
+      vehicles:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

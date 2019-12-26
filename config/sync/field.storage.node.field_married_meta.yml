@@ -1,0 +1,18 @@
+uuid: d32ffc97-29a8-4152-bce8-cc3925addd74
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_married_meta
+field_name: field_married_meta
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

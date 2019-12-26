@@ -1,0 +1,19 @@
+uuid: 311ba488-59fd-4c0d-bfc2-a7d6ce6df895
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_iso_label
+    - taxonomy.vocabulary.currency
+id: taxonomy_term.currency.field_iso_label
+field_name: field_iso_label
+entity_type: taxonomy_term
+bundle: currency
+label: 'Iso label'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

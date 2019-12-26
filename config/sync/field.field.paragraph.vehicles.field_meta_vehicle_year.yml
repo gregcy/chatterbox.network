@@ -1,0 +1,21 @@
+uuid: 6063d172-93a3-49bf-a05d-db4c767ea820
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_meta_vehicle_year
+    - paragraphs.paragraphs_type.vehicles
+  module:
+    - datetime
+id: paragraph.vehicles.field_meta_vehicle_year
+field_name: field_meta_vehicle_year
+entity_type: paragraph
+bundle: vehicles
+label: 'Meta Vehicle Year'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

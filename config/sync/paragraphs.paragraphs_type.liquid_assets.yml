@@ -1,0 +1,9 @@
+uuid: d4007cbe-edba-4e2a-b0b2-00686cb66cb9
+langcode: en
+status: true
+dependencies: {  }
+id: liquid_assets
+label: 'Liquid Assets'
+icon_uuid: null
+description: 'An item to represent a Liquid Asset entry from a politicians property declaration'
+behavior_plugins: {  }

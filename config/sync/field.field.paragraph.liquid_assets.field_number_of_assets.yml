@@ -1,0 +1,19 @@
+uuid: 4c9945a6-5e7f-45c3-992e-3bae611deb3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_number_of_assets
+    - paragraphs.paragraphs_type.liquid_assets
+id: paragraph.liquid_assets.field_number_of_assets
+field_name: field_number_of_assets
+entity_type: paragraph
+bundle: liquid_assets
+label: 'Number of Assets'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,21 @@
+uuid: 2f4fc33f-6222-4967-a716-1ac4edbdd153
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_year_of_acquisition
+    - paragraphs.paragraphs_type.property
+  module:
+    - datetime
+id: paragraph.property.field_year_of_acquisition
+field_name: field_year_of_acquisition
+entity_type: paragraph
+bundle: property
+label: 'Year of Acquisition'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

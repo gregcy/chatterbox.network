@@ -1,0 +1,23 @@
+uuid: 8d4a9dd7-ff6c-4f70-85d8-31fd0db0f4b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_meta_insurance_value
+    - paragraphs.paragraphs_type.insurance_contracts
+id: paragraph.insurance_contracts.field_meta_insurance_value
+field_name: field_meta_insurance_value
+entity_type: paragraph
+bundle: insurance_contracts
+label: 'Meta Insurance Value'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

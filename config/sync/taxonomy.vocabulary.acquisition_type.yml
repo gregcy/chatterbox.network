@@ -1,0 +1,8 @@
+uuid: fd6596eb-13ef-486f-a86a-bc16db7dc12d
+langcode: en
+status: true
+dependencies: {  }
+name: 'Acquisition Type'
+vid: acquisition_type
+description: ''
+weight: 0

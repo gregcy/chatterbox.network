@@ -1,0 +1,19 @@
+uuid: aa2e8774-f719-41f7-bd48-1b389e3c017a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_number_of_dependents
+    - node.type.pothen_esxes
+id: node.pothen_esxes.field_number_of_dependents
+field_name: field_number_of_dependents
+entity_type: node
+bundle: pothen_esxes
+label: 'Number of Dependents'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+uuid: ac18ca05-f41e-48ff-a39d-db6ae0b9aded
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_value_of_acquisition
+    - paragraphs.paragraphs_type.property
+id: paragraph.property.field_value_of_acquisition
+field_name: field_value_of_acquisition
+entity_type: paragraph
+bundle: property
+label: 'Value of Acquisition'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

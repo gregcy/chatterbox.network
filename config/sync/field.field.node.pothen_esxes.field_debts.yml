@@ -1,0 +1,52 @@
+uuid: fdcda0db-7bf7-4d40-8811-3fae82053880
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_debts
+    - node.type.pothen_esxes
+    - paragraphs.paragraphs_type.debts
+  module:
+    - entity_reference_revisions
+id: node.pothen_esxes.field_debts
+field_name: field_debts
+entity_type: node
+bundle: pothen_esxes
+label: Debts
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      debts: debts
+    target_bundles_drag_drop:
+      bank_deposits:
+        weight: 9
+        enabled: false
+      companies:
+        weight: 10
+        enabled: false
+      debts:
+        enabled: true
+        weight: 11
+      insurance_contracts:
+        weight: 12
+        enabled: false
+      liquid_assets:
+        weight: 13
+        enabled: false
+      previous_income:
+        weight: 14
+        enabled: false
+      property:
+        weight: 15
+        enabled: false
+      vehicles:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

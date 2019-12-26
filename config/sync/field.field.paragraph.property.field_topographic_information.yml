@@ -1,0 +1,19 @@
+uuid: 7ba6c836-5a11-47f8-9612-6d39ea44e190
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_topographic_information
+    - paragraphs.paragraphs_type.property
+id: paragraph.property.field_topographic_information
+field_name: field_topographic_information
+entity_type: paragraph
+bundle: property
+label: 'Topographic Information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

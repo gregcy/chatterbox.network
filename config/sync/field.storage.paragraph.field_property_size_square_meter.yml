@@ -1,0 +1,18 @@
+uuid: b7326830-1f3f-4684-9aa3-e2ddd2a28299
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_property_size_square_meter
+field_name: field_property_size_square_meter
+entity_type: paragraph
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,20 @@
+uuid: 450b698e-ffac-4252-8ed0-a9796f67399b
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_meta_vehicle_value
+field_name: field_meta_vehicle_value
+entity_type: paragraph
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

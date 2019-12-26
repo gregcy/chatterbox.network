@@ -1,0 +1,44 @@
+uuid: ccc7dd57-a472-46d6-9b00-3430fdac62ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.companies.field_company_name
+    - field.field.paragraph.companies.field_company_type
+    - field.field.paragraph.companies.field_notes
+    - field.field.paragraph.companies.field_type_of_participation
+    - paragraphs.paragraphs_type.companies
+id: paragraph.companies.default
+targetEntityType: paragraph
+bundle: companies
+mode: default
+content:
+  field_company_name:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_company_type:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_notes:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_type_of_participation:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+hidden: {  }

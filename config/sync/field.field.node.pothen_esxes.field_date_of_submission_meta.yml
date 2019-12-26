@@ -1,0 +1,21 @@
+uuid: 2b348e3b-a803-43b0-839d-0b693e5202c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_of_submission_meta
+    - node.type.pothen_esxes
+  module:
+    - datetime
+id: node.pothen_esxes.field_date_of_submission_meta
+field_name: field_date_of_submission_meta
+entity_type: node
+bundle: pothen_esxes
+label: 'Date of Submission Meta'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

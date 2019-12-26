@@ -1,0 +1,23 @@
+uuid: a3a54fd2-0794-4a59-910a-2370ada6adcf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_married_meta
+    - node.type.pothen_esxes
+id: node.pothen_esxes.field_married_meta
+field_name: field_married_meta
+entity_type: node
+bundle: pothen_esxes
+label: 'Married Meta'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'True'
+  off_label: 'False'
+field_type: boolean

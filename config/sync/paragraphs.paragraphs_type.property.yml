@@ -1,0 +1,9 @@
+uuid: 26ec8b12-9813-4a1a-93bc-6161390a51b0
+langcode: en
+status: true
+dependencies: {  }
+id: property
+label: Property
+icon_uuid: null
+description: 'An item to represent a Property entry from a politicians property declaration'
+behavior_plugins: {  }

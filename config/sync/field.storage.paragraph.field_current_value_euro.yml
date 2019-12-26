@@ -1,0 +1,19 @@
+uuid: 8d59847b-4f25-4744-a20b-fc17f0cd0807
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_current_value_euro
+field_name: field_current_value_euro
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

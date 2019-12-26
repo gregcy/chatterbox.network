@@ -1,0 +1,52 @@
+uuid: 7b9a4081-4b02-437b-9898-5930aaf8db87
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_liquid_assets
+    - node.type.pothen_esxes
+    - paragraphs.paragraphs_type.liquid_assets
+  module:
+    - entity_reference_revisions
+id: node.pothen_esxes.field_liquid_assets
+field_name: field_liquid_assets
+entity_type: node
+bundle: pothen_esxes
+label: 'Liquid Assets'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      liquid_assets: liquid_assets
+    target_bundles_drag_drop:
+      bank_deposits:
+        weight: 9
+        enabled: false
+      companies:
+        weight: 10
+        enabled: false
+      debts:
+        weight: 11
+        enabled: false
+      insurance_contracts:
+        weight: 12
+        enabled: false
+      liquid_assets:
+        enabled: true
+        weight: 13
+      previous_income:
+        weight: 14
+        enabled: false
+      property:
+        weight: 15
+        enabled: false
+      vehicles:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

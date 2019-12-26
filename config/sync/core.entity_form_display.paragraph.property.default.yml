@@ -1,0 +1,158 @@
+uuid: 86b43c3c-eab8-4d3c-8e68-55b5f1c8b14c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.property.field_acquisition
+    - field.field.paragraph.property.field_current_value
+    - field.field.paragraph.property.field_current_value_euro
+    - field.field.paragraph.property.field_date_of_acquisition
+    - field.field.paragraph.property.field_meta_acquisition
+    - field.field.paragraph.property.field_meta_property_type
+    - field.field.paragraph.property.field_notes
+    - field.field.paragraph.property.field_property_location
+    - field.field.paragraph.property.field_property_size
+    - field.field.paragraph.property.field_property_size_square_meter
+    - field.field.paragraph.property.field_property_type
+    - field.field.paragraph.property.field_rights_and_burdens
+    - field.field.paragraph.property.field_topographic_information
+    - field.field.paragraph.property.field_value_of_acquisition
+    - field.field.paragraph.property.field_value_of_acquisition_euro
+    - field.field.paragraph.property.field_year_of_acquisition
+    - paragraphs.paragraphs_type.property
+  module:
+    - datetime
+id: paragraph.property.default
+targetEntityType: paragraph
+bundle: property
+mode: default
+content:
+  field_acquisition:
+    weight: 7
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_current_value:
+    weight: 13
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_current_value_euro:
+    weight: 14
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_date_of_acquisition:
+    weight: 9
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_meta_acquisition:
+    weight: 16
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_meta_property_type:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_notes:
+    weight: 15
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_property_location:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_property_size:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_property_size_square_meter:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_property_type:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_rights_and_burdens:
+    weight: 6
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_topographic_information:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_value_of_acquisition:
+    weight: 11
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_value_of_acquisition_euro:
+    weight: 12
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_year_of_acquisition:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+hidden:
+  created: true
+  status: true

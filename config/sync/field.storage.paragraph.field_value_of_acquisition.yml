@@ -1,0 +1,19 @@
+uuid: c0e5f4eb-ed3b-453f-921f-9bd68c219851
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_value_of_acquisition
+field_name: field_value_of_acquisition
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

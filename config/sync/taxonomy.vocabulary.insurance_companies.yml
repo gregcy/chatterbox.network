@@ -1,0 +1,8 @@
+uuid: 3db0590b-c9ca-4d56-84d8-ba749ea14213
+langcode: en
+status: true
+dependencies: {  }
+name: 'Insurance Companies'
+vid: insurance_companies
+description: ''
+weight: 0

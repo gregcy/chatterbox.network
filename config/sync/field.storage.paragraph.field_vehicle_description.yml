@@ -1,0 +1,19 @@
+uuid: f9136410-110f-46e4-9a79-c2e4599bb5ae
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_vehicle_description
+field_name: field_vehicle_description
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

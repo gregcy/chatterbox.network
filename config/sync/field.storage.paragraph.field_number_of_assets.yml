@@ -1,0 +1,19 @@
+uuid: a50a8fef-01d5-4650-b308-2f77816dc859
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_number_of_assets
+field_name: field_number_of_assets
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

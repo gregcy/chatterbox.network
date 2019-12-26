@@ -1,0 +1,22 @@
+uuid: 37716417-f47d-42a7-a968-19b235358488
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: pothen_esxes
+label: 'Pothen Esxes'
+type: 'canonical_entities:node'
+pattern: 'pothen-esxes/[node:title]'
+selection_criteria:
+  6b1ea72a-b37e-4246-94eb-2559ccedd997:
+    id: node_type
+    bundles:
+      pothen_esxes: pothen_esxes
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 6b1ea72a-b37e-4246-94eb-2559ccedd997
+selection_logic: and
+weight: -5
+relationships: {  }

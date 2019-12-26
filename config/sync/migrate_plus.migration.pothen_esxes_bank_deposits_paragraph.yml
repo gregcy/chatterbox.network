@@ -1,0 +1,38 @@
+uuid: 1ed629a5-e17b-4268-b660-77dce8ac26b7
+langcode: en
+status: true
+dependencies: {  }
+id: pothen_esxes_bank_deposits_paragraph
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: taxonomy_migration
+label: 'Pothen Esxes Bank Deposits Paragraphs'
+source:
+  plugin: d7_paragraphs_item
+  bundle: bank_deposits
+process:
+  id: item_id
+  revision_id: revision_id
+  field_bank_name: field_bank_name
+  field_amount: field_amount
+  field_meta_bank:
+    plugin: migration_lookup
+    migration: pothen_esxes_bank_taxonomy
+    source: field_meta_bank
+  field_meta_amount_currency:
+    plugin: migration_lookup
+    migration: pothen_esxes_currency_taxonomy
+    source: field_meta_amount_currency
+  field_meta_amount: field_meta_amount
+  field_notes: field_notes
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: bank_deposits
+migration_dependencies:
+  required:
+    - pothen_esxes_bank_taxonomy
+    - pothen_esxes_currency_taxonomy

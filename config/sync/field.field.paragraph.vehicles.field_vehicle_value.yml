@@ -1,0 +1,19 @@
+uuid: e835d28b-267c-4b62-b914-03d37217b999
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vehicle_value
+    - paragraphs.paragraphs_type.vehicles
+id: paragraph.vehicles.field_vehicle_value
+field_name: field_vehicle_value
+entity_type: paragraph
+bundle: vehicles
+label: 'Vehicle Value'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

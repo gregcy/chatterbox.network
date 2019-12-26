@@ -1,0 +1,19 @@
+uuid: 4a4f24ae-0a7c-4dec-962e-67087d466870
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_property_type
+    - paragraphs.paragraphs_type.property
+id: paragraph.property.field_property_type
+field_name: field_property_type
+entity_type: paragraph
+bundle: property
+label: 'Property Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

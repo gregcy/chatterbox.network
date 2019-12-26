@@ -1,0 +1,19 @@
+uuid: 5b6f4525-d1f1-4620-9217-7aeabe0e036e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_notes
+    - paragraphs.paragraphs_type.debts
+id: paragraph.debts.field_notes
+field_name: field_notes
+entity_type: paragraph
+bundle: debts
+label: Notes
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

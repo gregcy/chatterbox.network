@@ -1,0 +1,27 @@
+uuid: 7cc0a1c5-ae59-4d8f-acb4-77b6154e93e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_meta_debt_currency
+    - paragraphs.paragraphs_type.debts
+id: paragraph.debts.field_meta_debt_currency
+field_name: field_meta_debt_currency
+entity_type: paragraph
+bundle: debts
+label: 'Meta Debt Currency'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles: {  }
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

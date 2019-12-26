@@ -1,0 +1,19 @@
+uuid: e50f227a-78c6-47d2-901e-4fbb39fff97a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rights_and_burdens
+    - paragraphs.paragraphs_type.property
+id: paragraph.property.field_rights_and_burdens
+field_name: field_rights_and_burdens
+entity_type: paragraph
+bundle: property
+label: 'Rights and Burdens'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

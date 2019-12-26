@@ -1,0 +1,21 @@
+uuid: c599a8b9-06df-407f-9f2c-5d098f4c97b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_previous_income_date
+    - paragraphs.paragraphs_type.previous_income
+  module:
+    - datetime_range
+id: paragraph.previous_income.field_previous_income_date
+field_name: field_previous_income_date
+entity_type: paragraph
+bundle: previous_income
+label: 'Previous Income Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

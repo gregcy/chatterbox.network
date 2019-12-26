@@ -1,0 +1,19 @@
+uuid: dbe714ee-acfc-4424-96d9-613f5b8407f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_country
+    - taxonomy.vocabulary.currency
+id: taxonomy_term.currency.field_country
+field_name: field_country
+entity_type: taxonomy_term
+bundle: currency
+label: Country
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

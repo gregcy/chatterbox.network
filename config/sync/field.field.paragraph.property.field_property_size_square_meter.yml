@@ -1,0 +1,23 @@
+uuid: e8d9e402-7aaf-4719-b392-77ddcfcf3eaa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_property_size_square_meter
+    - paragraphs.paragraphs_type.property
+id: paragraph.property.field_property_size_square_meter
+field_name: field_property_size_square_meter
+entity_type: paragraph
+bundle: property
+label: 'Property SIze Square Meters'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

@@ -1,0 +1,21 @@
+uuid: 63881700-8e62-4d03-a3c1-be8cbc9c5a60
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_dob
+    - node.type.pothen_esxes
+  module:
+    - datetime
+id: node.pothen_esxes.field_meta_dob
+field_name: field_meta_dob
+entity_type: node
+bundle: pothen_esxes
+label: 'Meta DOB'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

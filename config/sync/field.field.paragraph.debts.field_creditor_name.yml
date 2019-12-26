@@ -1,0 +1,19 @@
+uuid: 59b780fd-bbfa-4ddf-a8f8-9f3597016ead
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_creditor_name
+    - paragraphs.paragraphs_type.debts
+id: paragraph.debts.field_creditor_name
+field_name: field_creditor_name
+entity_type: paragraph
+bundle: debts
+label: 'Creditor Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

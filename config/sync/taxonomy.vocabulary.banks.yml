@@ -1,0 +1,8 @@
+uuid: adaa9655-d39d-467d-add1-97a37b187c2b
+langcode: en
+status: true
+dependencies: {  }
+name: Banks
+vid: banks
+description: ''
+weight: 0

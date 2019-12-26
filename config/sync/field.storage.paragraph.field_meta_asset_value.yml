@@ -1,0 +1,18 @@
+uuid: 6e9e2e85-3c04-46a1-8eee-dd71dd415858
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_meta_asset_value
+field_name: field_meta_asset_value
+entity_type: paragraph
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

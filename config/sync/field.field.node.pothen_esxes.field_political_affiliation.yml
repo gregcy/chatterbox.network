@@ -1,0 +1,29 @@
+uuid: c0d1b7c8-9225-40da-b9c5-f40e1811a53f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_political_affiliation
+    - node.type.pothen_esxes
+    - taxonomy.vocabulary.political_affiliation
+id: node.pothen_esxes.field_political_affiliation
+field_name: field_political_affiliation
+entity_type: node
+bundle: pothen_esxes
+label: 'Political Affiliation'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      political_affiliation: political_affiliation
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

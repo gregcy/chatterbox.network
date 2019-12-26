@@ -1,0 +1,19 @@
+uuid: f3c1cc67-2c79-42fd-a6ba-d2d01107643c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dob
+    - node.type.pothen_esxes
+id: node.pothen_esxes.field_dob
+field_name: field_dob
+entity_type: node
+bundle: pothen_esxes
+label: DOB
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

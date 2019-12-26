@@ -1,0 +1,23 @@
+uuid: af0a7c8f-1395-4658-9cba-d751ba7a4b7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_value_of_acquisition_euro
+    - paragraphs.paragraphs_type.property
+id: paragraph.property.field_value_of_acquisition_euro
+field_name: field_value_of_acquisition_euro
+entity_type: paragraph
+bundle: property
+label: 'Value of Acquisition Euro'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

@@ -1,0 +1,20 @@
+uuid: 3acdf2ad-b4da-4c3d-9333-406fa4e19be8
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime_range
+    - paragraphs
+id: paragraph.field_previous_income_date
+field_name: field_previous_income_date
+entity_type: paragraph
+type: daterange
+settings:
+  datetime_type: datetime
+module: datetime_range
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,23 @@
+uuid: d6b914d5-a5fc-4d1a-9e60-f924f872144d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_meta_amount
+    - paragraphs.paragraphs_type.bank_deposits
+id: paragraph.bank_deposits.field_meta_amount
+field_name: field_meta_amount
+entity_type: paragraph
+bundle: bank_deposits
+label: 'Meta Amount'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

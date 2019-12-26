@@ -1,0 +1,19 @@
+uuid: 104a4f03-229c-422f-bf31-23fffc82d302
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_type_of_participation
+    - paragraphs.paragraphs_type.companies
+id: paragraph.companies.field_type_of_participation
+field_name: field_type_of_participation
+entity_type: paragraph
+bundle: companies
+label: 'Type of Participation'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,19 @@
+uuid: 17502363-91eb-4fdc-b3f2-dacfbb0c0a18
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_bank_name
+field_name: field_bank_name
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

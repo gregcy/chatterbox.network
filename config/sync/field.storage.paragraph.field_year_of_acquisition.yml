@@ -1,0 +1,20 @@
+uuid: 3dde5aca-f2f9-4b2b-ad54-aa2a1f7281aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - paragraphs
+id: paragraph.field_year_of_acquisition
+field_name: field_year_of_acquisition
+entity_type: paragraph
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

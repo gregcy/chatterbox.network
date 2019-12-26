@@ -1,0 +1,19 @@
+uuid: b9ae1e57-8df1-44bf-ad97-eccf986d24d3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_differences_since_last_dec
+field_name: field_differences_since_last_dec
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

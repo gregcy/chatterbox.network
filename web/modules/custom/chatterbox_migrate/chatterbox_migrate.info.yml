@@ -1,0 +1,6 @@
+name: Module for Chatterbox Migration
+type: module
+description: 'Module for Chatterbox Migration'
+package: Custom
+version: 8.x
+core: 8.x

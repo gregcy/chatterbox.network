@@ -1,0 +1,21 @@
+uuid: 559b2863-fb6b-4d51-ba29-a1e856cc06ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_notes
+    - node.type.pothen_esxes
+  module:
+    - text
+id: node.pothen_esxes.field_notes
+field_name: field_notes
+entity_type: node
+bundle: pothen_esxes
+label: Notes
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,19 @@
+uuid: 9e3a1da3-43f8-4ab5-9feb-11a42fb98233
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_married
+    - node.type.pothen_esxes
+id: node.pothen_esxes.field_married
+field_name: field_married
+entity_type: node
+bundle: pothen_esxes
+label: Married
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

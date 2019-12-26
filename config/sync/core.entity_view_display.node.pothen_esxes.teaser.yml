@@ -1,0 +1,20 @@
+uuid: 9fbd7bb5-47c4-41f3-bc55-7281e4f921b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.pothen_esxes
+  module:
+    - user
+id: node.pothen_esxes.teaser
+targetEntityType: node
+bundle: pothen_esxes
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

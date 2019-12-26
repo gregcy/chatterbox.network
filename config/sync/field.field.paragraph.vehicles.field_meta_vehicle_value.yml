@@ -1,0 +1,23 @@
+uuid: e09f156e-f4c2-4f54-a479-70171795eb40
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_meta_vehicle_value
+    - paragraphs.paragraphs_type.vehicles
+id: paragraph.vehicles.field_meta_vehicle_value
+field_name: field_meta_vehicle_value
+entity_type: paragraph
+bundle: vehicles
+label: 'Meta Vehicle Value'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

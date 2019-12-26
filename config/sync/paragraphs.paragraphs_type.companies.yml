@@ -1,0 +1,9 @@
+uuid: 9b8010f2-6dbf-45d1-9745-5e75febae90b
+langcode: en
+status: true
+dependencies: {  }
+id: companies
+label: Companies
+icon_uuid: null
+description: 'An item to represent a Company entry from a politicians property declaration'
+behavior_plugins: {  }

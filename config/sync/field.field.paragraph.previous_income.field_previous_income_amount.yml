@@ -1,0 +1,23 @@
+uuid: a762e94e-7f81-4219-89ca-00e2b5a834cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_previous_income_amount
+    - paragraphs.paragraphs_type.previous_income
+id: paragraph.previous_income.field_previous_income_amount
+field_name: field_previous_income_amount
+entity_type: paragraph
+bundle: previous_income
+label: 'Previous Income Amount'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

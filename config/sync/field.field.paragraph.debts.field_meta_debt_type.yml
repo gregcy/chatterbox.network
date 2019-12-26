@@ -1,0 +1,29 @@
+uuid: ee6f6ea5-c7dd-45ff-993c-39827728d2c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_meta_debt_type
+    - paragraphs.paragraphs_type.debts
+    - taxonomy.vocabulary.debt_type
+id: paragraph.debts.field_meta_debt_type
+field_name: field_meta_debt_type
+entity_type: paragraph
+bundle: debts
+label: 'Meta Debt Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      debt_type: debt_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

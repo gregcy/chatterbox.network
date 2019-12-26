@@ -1,0 +1,23 @@
+uuid: 927d562b-6f47-4fe5-94ae-12f7b4c3cefe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_meta_debt_amount
+    - paragraphs.paragraphs_type.debts
+id: paragraph.debts.field_meta_debt_amount
+field_name: field_meta_debt_amount
+entity_type: paragraph
+bundle: debts
+label: 'Meta Debt Amount'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

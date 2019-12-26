@@ -1,0 +1,20 @@
+uuid: b463b4b7-f438-42e3-bfa2-4dd713040270
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - taxonomy
+id: paragraph.field_meta_insurance_company
+field_name: field_meta_insurance_company
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

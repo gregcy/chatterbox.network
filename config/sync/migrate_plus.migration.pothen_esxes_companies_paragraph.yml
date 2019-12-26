@@ -1,0 +1,27 @@
+uuid: 6f79939b-50a0-4465-92c5-a82bd77f8882
+langcode: en
+status: true
+dependencies: {  }
+id: pothen_esxes_companies_paragraph
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: taxonomy_migration
+label: 'Pothen Esxes Companies Paragraphs'
+source:
+  plugin: d7_paragraphs_item
+  bundle: companies
+process:
+  id: item_id
+  revision_id: revision_id
+  field_company_name: field_company_name
+  field_company_type: field_company_type
+  field_type_of_participation: field_type_of_participation
+  field_notes: field_notes
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: companies
+migration_dependencies: {  }

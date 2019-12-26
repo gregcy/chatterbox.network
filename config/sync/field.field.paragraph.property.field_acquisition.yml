@@ -1,0 +1,19 @@
+uuid: e12cfe76-7e4c-4b7b-8146-21a14ab4e146
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_acquisition
+    - paragraphs.paragraphs_type.property
+id: paragraph.property.field_acquisition
+field_name: field_acquisition
+entity_type: paragraph
+bundle: property
+label: Acquisition
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

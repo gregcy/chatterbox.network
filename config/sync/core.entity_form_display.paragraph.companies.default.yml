@@ -1,0 +1,50 @@
+uuid: 238a7c15-7410-4531-b9c9-258d49e5a37f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.companies.field_company_name
+    - field.field.paragraph.companies.field_company_type
+    - field.field.paragraph.companies.field_notes
+    - field.field.paragraph.companies.field_type_of_participation
+    - paragraphs.paragraphs_type.companies
+id: paragraph.companies.default
+targetEntityType: paragraph
+bundle: companies
+mode: default
+content:
+  field_company_name:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_company_type:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_notes:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_type_of_participation:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,23 @@
+uuid: f8ad39fb-736d-48d6-909e-d93007bb333a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_meta_asset_value
+    - paragraphs.paragraphs_type.liquid_assets
+id: paragraph.liquid_assets.field_meta_asset_value
+field_name: field_meta_asset_value
+entity_type: paragraph
+bundle: liquid_assets
+label: 'Meta Asset Value'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

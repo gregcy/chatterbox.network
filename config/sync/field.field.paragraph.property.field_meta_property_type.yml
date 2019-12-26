@@ -1,0 +1,29 @@
+uuid: 345bd082-1062-4a24-bd4a-5f70ed2212a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_meta_property_type
+    - paragraphs.paragraphs_type.property
+    - taxonomy.vocabulary.property_type
+id: paragraph.property.field_meta_property_type
+field_name: field_meta_property_type
+entity_type: paragraph
+bundle: property
+label: 'Meta Property Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      property_type: property_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: property_type
+field_type: entity_reference

@@ -1,0 +1,69 @@
+uuid: e46ca22d-6683-4fca-8924-270d22b60077
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.bank_deposits.field_amount
+    - field.field.paragraph.bank_deposits.field_bank_name
+    - field.field.paragraph.bank_deposits.field_meta_amount
+    - field.field.paragraph.bank_deposits.field_meta_amount_currency
+    - field.field.paragraph.bank_deposits.field_meta_bank
+    - field.field.paragraph.bank_deposits.field_notes
+    - paragraphs.paragraphs_type.bank_deposits
+id: paragraph.bank_deposits.default
+targetEntityType: paragraph
+bundle: bank_deposits
+mode: default
+content:
+  field_amount:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_bank_name:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_meta_amount:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_meta_amount_currency:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_meta_bank:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_notes:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+hidden:
+  created: true
+  status: true

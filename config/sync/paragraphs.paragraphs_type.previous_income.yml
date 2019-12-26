@@ -1,0 +1,9 @@
+uuid: 395cd976-3154-43e4-a6d9-a9684fdbb8fa
+langcode: en
+status: true
+dependencies: {  }
+id: previous_income
+label: 'Previous Income'
+icon_uuid: null
+description: 'An item to represent a Previous Income entry from a politicians property declaration'
+behavior_plugins: {  }

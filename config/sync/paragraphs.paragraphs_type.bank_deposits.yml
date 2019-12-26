@@ -1,0 +1,9 @@
+uuid: 24a9661f-88fc-46da-81fd-9f395aafc993
+langcode: en
+status: true
+dependencies: {  }
+id: bank_deposits
+label: 'Bank Deposits'
+icon_uuid: null
+description: 'An item to represent a Bank Deposit entry from a politicians property declaration'
+behavior_plugins: {  }

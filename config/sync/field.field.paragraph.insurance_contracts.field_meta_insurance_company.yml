@@ -1,0 +1,29 @@
+uuid: b67958ad-1650-4e29-801c-2119558e145c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_meta_insurance_company
+    - paragraphs.paragraphs_type.insurance_contracts
+    - taxonomy.vocabulary.insurance_companies
+id: paragraph.insurance_contracts.field_meta_insurance_company
+field_name: field_meta_insurance_company
+entity_type: paragraph
+bundle: insurance_contracts
+label: 'Meta Insurance Company'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      insurance_companies: insurance_companies
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

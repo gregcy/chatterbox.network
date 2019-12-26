@@ -1,0 +1,29 @@
+uuid: 47a7f3de-dba1-487a-9392-e5de05e4ea88
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_meta_vehicle_make
+    - paragraphs.paragraphs_type.vehicles
+    - taxonomy.vocabulary.car_make
+id: paragraph.vehicles.field_meta_vehicle_make
+field_name: field_meta_vehicle_make
+entity_type: paragraph
+bundle: vehicles
+label: 'Meta Vehicle Make'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      car_make: car_make
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,27 @@
+uuid: de55c857-8808-4d7b-befa-24b6a6a2478c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_meta_amount_currency
+    - paragraphs.paragraphs_type.bank_deposits
+id: paragraph.bank_deposits.field_meta_amount_currency
+field_name: field_meta_amount_currency
+entity_type: paragraph
+bundle: bank_deposits
+label: 'Meta Amount Currency'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles: {  }
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

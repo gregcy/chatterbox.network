@@ -1,0 +1,29 @@
+uuid: b49b6e63-4921-4c0e-97d2-0b3f38527c58
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_declaration_category
+    - node.type.pothen_esxes
+    - taxonomy.vocabulary.pothen_esxes_category
+id: node.pothen_esxes.field_declaration_category
+field_name: field_declaration_category
+entity_type: node
+bundle: pothen_esxes
+label: 'Declaration Category'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      pothen_esxes_category: pothen_esxes_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

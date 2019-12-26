@@ -1,0 +1,19 @@
+uuid: d346066b-618e-4112-be40-a3c6d20e3774
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_current_value_euro
+    - paragraphs.paragraphs_type.property
+id: paragraph.property.field_current_value_euro
+field_name: field_current_value_euro
+entity_type: paragraph
+bundle: property
+label: 'Current Value Euro'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

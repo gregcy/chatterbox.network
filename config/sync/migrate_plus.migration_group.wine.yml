@@ -1,0 +1,17 @@
+uuid: af263520-d5ac-45f2-95d6-47186ea273d1
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - migrate_example_advanced
+_core:
+  default_config_hash: kSKyQijJdDuiKDCORyM-QO_Uer92Af_25IKVjRGWlyQ
+id: wine
+label: 'Wine Imports'
+description: 'A few wine-related imports, demonstrating some more advanced migration techniques.'
+source_type: 'Custom tables and XML'
+module: null
+shared_configuration:
+  source:
+    key: default

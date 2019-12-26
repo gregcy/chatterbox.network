@@ -1,0 +1,8 @@
+uuid: 3d1e18a9-bf0a-43dd-a3a2-295f20144aa5
+langcode: en
+status: true
+dependencies: {  }
+name: 'Political Affiliation'
+vid: political_affiliation
+description: ''
+weight: 0

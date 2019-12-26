@@ -1,0 +1,68 @@
+uuid: 1d4624f4-8a28-4bb8-955c-aceeec79928e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.vehicles.field_meta_vehicle_make
+    - field.field.paragraph.vehicles.field_meta_vehicle_value
+    - field.field.paragraph.vehicles.field_meta_vehicle_year
+    - field.field.paragraph.vehicles.field_notes
+    - field.field.paragraph.vehicles.field_vehicle_description
+    - field.field.paragraph.vehicles.field_vehicle_value
+    - paragraphs.paragraphs_type.vehicles
+  module:
+    - datetime
+id: paragraph.vehicles.default
+targetEntityType: paragraph
+bundle: vehicles
+mode: default
+content:
+  field_meta_vehicle_make:
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_meta_vehicle_value:
+    weight: 2
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_meta_vehicle_year:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_notes:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_vehicle_description:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_vehicle_value:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+hidden:
+  created: true
+  status: true

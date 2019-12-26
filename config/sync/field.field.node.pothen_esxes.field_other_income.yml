@@ -1,0 +1,21 @@
+uuid: c0d4234d-1402-4c1c-aa49-8ab10bf2964d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_other_income
+    - node.type.pothen_esxes
+  module:
+    - text
+id: node.pothen_esxes.field_other_income
+field_name: field_other_income
+entity_type: node
+bundle: pothen_esxes
+label: 'Other Income'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

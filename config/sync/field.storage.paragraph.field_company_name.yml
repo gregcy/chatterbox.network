@@ -1,0 +1,19 @@
+uuid: 0e9229da-c93b-49b1-afe7-036e3685e1dc
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_company_name
+field_name: field_company_name
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,68 @@
+uuid: 1f1f971d-2ef3-460f-982d-5927b8b688a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.insurance_contracts.field_insurance_company_name
+    - field.field.paragraph.insurance_contracts.field_insurance_policy_number
+    - field.field.paragraph.insurance_contracts.field_insurance_value
+    - field.field.paragraph.insurance_contracts.field_meta_insurance_company
+    - field.field.paragraph.insurance_contracts.field_meta_insurance_value
+    - field.field.paragraph.insurance_contracts.field_notes
+    - paragraphs.paragraphs_type.insurance_contracts
+id: paragraph.insurance_contracts.default
+targetEntityType: paragraph
+bundle: insurance_contracts
+mode: default
+content:
+  field_insurance_company_name:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_insurance_policy_number:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_insurance_value:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_meta_insurance_company:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_meta_insurance_value:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_notes:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+hidden:
+  created: true
+  status: true

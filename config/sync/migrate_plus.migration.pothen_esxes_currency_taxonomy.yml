@@ -1,0 +1,46 @@
+uuid: a46185c5-e117-47d9-80b1-d454f818113c
+langcode: en
+status: true
+dependencies: {  }
+id: pothen_esxes_currency_taxonomy
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: taxonomy_migration
+label: 'Pothen Esxes Currency taxonomy'
+source:
+  plugin: d7_taxonomy_term
+  bundle: currency
+process:
+  tid: tid
+  vid:
+    plugin: migration_lookup
+    migration: d7_taxonomy_vocabulary
+    source: vid
+  name: name
+  description/value: description
+  description/format: format
+  weight: weight
+  field_iso_label: field_currency_iso
+  field_country: field_currency_country
+  parent_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: parent
+    -
+      plugin: migration_lookup
+      migration: d7_taxonomy_term
+  parent:
+    plugin: default_value
+    default_value: 0
+    source: '@parent_id'
+  forum_container: is_container
+  changed: timestamp
+  langcode: language
+destination:
+  plugin: 'entity:taxonomy_term'
+migration_dependencies: null

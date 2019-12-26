@@ -1,0 +1,18 @@
+uuid: e9809660-d2a5-42e9-baa6-b462a330f1cb
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Pothen Esxes'
+type: pothen_esxes
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

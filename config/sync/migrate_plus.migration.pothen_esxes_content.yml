@@ -1,0 +1,194 @@
+uuid: 0a9435c3-9371-4f21-be92-dc5795f7e765
+langcode: en
+status: true
+dependencies: {  }
+id: pothen_esxes_content
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: taxonomy_migration
+label: 'Pothen Esxes Content Migration'
+source:
+  plugin: d7_node
+  node_type: pothen_esxes
+process:
+  nid: tnid
+  vid: vid
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: und
+  title: title
+  uid: node_uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  field_name_and_surname: field_name_and_surname
+  field_office: field_office
+  field_dob: field_dob_text
+  field_meta_dob:
+    plugin: custom_date
+    source: field_dob
+  field_married: field_married_text
+  field_married_meta: field_married
+  field_number_of_dependents: field_number_of_dependents_text
+  field_number_of_dependents_meta: field_number_of_dependents
+  field_date_of_submission: field_date_of_submission_text
+  field_date_of_submission_meta:
+    plugin: custom_date
+    source: field_date_of_submission
+  field_declaration_category:
+    plugin: migration_lookup
+    migration: pothen_esxes_pothen_esxes_category_taxonomy
+    source: field_declaration_category
+  field_political_affiliation:
+    plugin: migration_lookup
+    migration: pothen_esxes_political_afiliation_taxonomy
+    source: field_political_affiliation
+  field_property_declaration:
+    plugin: sub_process
+    source: field_property_declaration
+    process:
+      target_id:
+        -
+          plugin: migration_lookup
+          migration:
+            - pothen_esxes_property_paragraph
+          source: value
+        -
+          plugin: extract
+          index:
+            - 0
+      target_revision_id: '@target_id'
+  field_vehicles:
+    plugin: sub_process
+    source: field_vehicles
+    process:
+      target_id:
+        -
+          plugin: migration_lookup
+          migration:
+            - pothen_esxes_vehicles_paragraph
+          source: value
+        -
+          plugin: extract
+          index:
+            - 0
+      target_revision_id: '@target_id'
+  field_company_positions:
+    plugin: sub_process
+    source: field_company_positions
+    process:
+      target_id:
+        -
+          plugin: migration_lookup
+          migration:
+            - pothen_esxes_companies_paragraph
+          source: value
+        -
+          plugin: extract
+          index:
+            - 0
+      target_revision_id: '@target_id'
+  field_liquid_assets:
+    plugin: sub_process
+    source: field_liquid_assets
+    process:
+      target_id:
+        -
+          plugin: migration_lookup
+          migration:
+            - pothen_esxes_liquid_assets_paragraph
+          source: value
+        -
+          plugin: extract
+          index:
+            - 0
+      target_revision_id: '@target_id'
+  field_bank_deposits:
+    plugin: sub_process
+    source: field_bank_deposits
+    process:
+      target_id:
+        -
+          plugin: migration_lookup
+          migration:
+            - pothen_esxes_bank_deposits_paragraph
+          source: value
+        -
+          plugin: extract
+          index:
+            - 0
+      target_revision_id: '@target_id'
+  field_insurance_policies:
+    plugin: sub_process
+    source: field_insurance_policies
+    process:
+      target_id:
+        -
+          plugin: migration_lookup
+          migration:
+            - pothen_esxes_insurance_contracts_paragraph
+          source: value
+        -
+          plugin: extract
+          index:
+            - 0
+      target_revision_id: '@target_id'
+  field_other_income: field_other_income
+  field_income_meta: field_income_meta
+  field_previous_year_income: field_previous_year_income
+  field_previous_year_income_meta:
+    plugin: sub_process
+    source: field_previous_year_income_meta
+    process:
+      target_id:
+        -
+          plugin: migration_lookup
+          migration:
+            - pothen_esxes_previous_income_paragraph
+          source: value
+        -
+          plugin: extract
+          index:
+            - 0
+      target_revision_id: '@target_id'
+  field_debts:
+    plugin: sub_process
+    source: field_debts
+    process:
+      target_id:
+        -
+          plugin: migration_lookup
+          migration:
+            - pothen_esxes_debts_paragraph
+          source: value
+        -
+          plugin: extract
+          index:
+            - 0
+      target_revision_id: '@target_id'
+  field_differences_since_last_dec: field_differences_since_last_dec
+  field_notes: field_notes
+  field_wikidata_entity_id: field_wikidata_entity_id
+destination:
+  plugin: 'entity:node'
+  default_bundle: pothen_esxes
+migration_dependencies:
+  required:
+    - pothen_esxes_companies_paragraph
+    - pothen_esxes_property_paragraph
+    - pothen_esxes_vehicles_paragraph
+    - pothen_esxes_liquid_assets_paragraph
+    - pothen_esxes_bank_deposits_paragraph
+    - pothen_esxes_insurance_contracts_paragraph
+    - pothen_esxes_previous_income_paragraph
+    - pothen_esxes_debts_paragraph

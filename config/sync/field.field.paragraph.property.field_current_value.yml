@@ -1,0 +1,19 @@
+uuid: 5c817a7c-9a09-4ee8-9f29-fa5033a0ebcd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_current_value
+    - paragraphs.paragraphs_type.property
+id: paragraph.property.field_current_value
+field_name: field_current_value
+entity_type: paragraph
+bundle: property
+label: 'Current Value'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

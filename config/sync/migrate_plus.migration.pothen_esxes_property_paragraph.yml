@@ -1,0 +1,50 @@
+uuid: f97700a7-c306-4947-98ff-5e203edf3d37
+langcode: en
+status: true
+dependencies: {  }
+id: pothen_esxes_property_paragraph
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: taxonomy_migration
+label: 'Pothen Esxes Property Paragraphs'
+source:
+  plugin: d7_paragraphs_item
+  bundle: property
+process:
+  id: item_id
+  revision_id: revision_id
+  field_property_location: field_propery_location
+  field_property_type: field_property_type
+  field_meta_property_type:
+    plugin: migration_lookup
+    migration: pothen_esxes_property_type_taxonomy
+    source: field_meta_property_type
+  field_topographic_information: field_topographic_information
+  field_property_size: field_property_size
+  field_property_size_square_meter: field_property_size_square_meter
+  field_rights_and_burdens: field_rights_and_burdens
+  field_acquisition: field_acquisition
+  field_meta_acquisition:
+    plugin: migration_lookup
+    migration: pothen_esxes_acquisition_type_taxonomy
+    source: field_meta_acquisition
+  field_date_of_acquisition: field_date_of_acquisition
+  field_year_of_acquisition:
+    plugin: custom_date
+    source: field_year_of_acquisition
+  field_value_of_acquisition: field_value_of_acquisition
+  field_value_of_acquisition_euro: field_value_of_acquisition_euro
+  field_current_value: field_current_value
+  field_current_value_euro: field_current_value_euro
+  field_notes: field_notes
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: property
+migration_dependencies:
+  required:
+    - pothen_esxes_acquisition_type_taxonomy
+    - pothen_esxes_property_type_taxonomy

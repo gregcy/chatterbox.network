@@ -1,0 +1,8 @@
+uuid: 48b4ea73-a471-450c-b588-7f80f0494c48
+langcode: en
+status: true
+dependencies: {  }
+name: 'Car Make'
+vid: car_make
+description: ''
+weight: 0

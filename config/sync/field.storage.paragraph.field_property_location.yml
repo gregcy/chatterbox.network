@@ -1,0 +1,19 @@
+uuid: d3e0d73d-3bc8-4796-98eb-129df4802408
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_property_location
+field_name: field_property_location
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: 217bcb56-c289-4bdb-9fc3-eec84af5e54a
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_rights_and_burdens
+field_name: field_rights_and_burdens
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

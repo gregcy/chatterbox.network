@@ -1,0 +1,23 @@
+uuid: 4c63795d-5d9b-4723-85e4-cfd7bd349c4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_number_of_dependents_meta
+    - node.type.pothen_esxes
+id: node.pothen_esxes.field_number_of_dependents_meta
+field_name: field_number_of_dependents_meta
+entity_type: node
+bundle: pothen_esxes
+label: 'Number of Dependents Meta'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

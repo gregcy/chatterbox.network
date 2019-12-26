@@ -1,0 +1,52 @@
+uuid: a3027cfd-5878-4922-92ac-392d503c92ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_company_positions
+    - node.type.pothen_esxes
+    - paragraphs.paragraphs_type.companies
+  module:
+    - entity_reference_revisions
+id: node.pothen_esxes.field_company_positions
+field_name: field_company_positions
+entity_type: node
+bundle: pothen_esxes
+label: 'Company Positions'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      companies: companies
+    target_bundles_drag_drop:
+      bank_deposits:
+        weight: 9
+        enabled: false
+      companies:
+        enabled: true
+        weight: 10
+      debts:
+        weight: 11
+        enabled: false
+      insurance_contracts:
+        weight: 12
+        enabled: false
+      liquid_assets:
+        weight: 13
+        enabled: false
+      previous_income:
+        weight: 14
+        enabled: false
+      property:
+        weight: 15
+        enabled: false
+      vehicles:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

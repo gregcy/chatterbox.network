@@ -1,0 +1,19 @@
+uuid: 2f1551c1-4246-45d4-9075-32f05eeeae84
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_of_submission
+    - node.type.pothen_esxes
+id: node.pothen_esxes.field_date_of_submission
+field_name: field_date_of_submission
+entity_type: node
+bundle: pothen_esxes
+label: 'Date of Submission'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

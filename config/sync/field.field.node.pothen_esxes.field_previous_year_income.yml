@@ -1,0 +1,21 @@
+uuid: f11b3139-8b08-4b71-a871-11ffe9992453
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_previous_year_income
+    - node.type.pothen_esxes
+  module:
+    - text
+id: node.pothen_esxes.field_previous_year_income
+field_name: field_previous_year_income
+entity_type: node
+bundle: pothen_esxes
+label: 'Previous Year Income'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,8 @@
+uuid: 84405280-85c7-4f02-9f47-9998f818d88d
+langcode: en
+status: true
+dependencies: {  }
+name: 'Debt Type'
+vid: debt_type
+description: ''
+weight: 0

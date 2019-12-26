@@ -1,0 +1,23 @@
+uuid: 23783eba-2773-4282-aa62-1f1977d87d03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_income_meta
+    - node.type.pothen_esxes
+id: node.pothen_esxes.field_income_meta
+field_name: field_income_meta
+entity_type: node
+bundle: pothen_esxes
+label: 'Income Meta'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

@@ -1,0 +1,19 @@
+uuid: 24b9c7fa-f867-4011-abf0-2b5b8fb71ffa
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_type_of_participation
+field_name: field_type_of_participation
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

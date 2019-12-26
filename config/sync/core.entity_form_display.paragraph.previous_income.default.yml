@@ -1,0 +1,31 @@
+uuid: 2e42258d-98cd-4866-a07c-227856943143
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.previous_income.field_previous_income_amount
+    - field.field.paragraph.previous_income.field_previous_income_date
+    - paragraphs.paragraphs_type.previous_income
+  module:
+    - datetime_range
+id: paragraph.previous_income.default
+targetEntityType: paragraph
+bundle: previous_income
+mode: default
+content:
+  field_previous_income_amount:
+    weight: 1
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_previous_income_date:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+hidden:
+  created: true
+  status: true

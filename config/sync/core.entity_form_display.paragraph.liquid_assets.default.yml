@@ -1,0 +1,59 @@
+uuid: 46aa8148-e45a-4ab3-b990-3a36b867cbbd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.liquid_assets.field_liquid_asset_description
+    - field.field.paragraph.liquid_assets.field_liquid_asset_type
+    - field.field.paragraph.liquid_assets.field_meta_asset_value
+    - field.field.paragraph.liquid_assets.field_notes
+    - field.field.paragraph.liquid_assets.field_number_of_assets
+    - paragraphs.paragraphs_type.liquid_assets
+id: paragraph.liquid_assets.default
+targetEntityType: paragraph
+bundle: liquid_assets
+mode: default
+content:
+  field_liquid_asset_description:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_liquid_asset_type:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_meta_asset_value:
+    weight: 3
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_notes:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_number_of_assets:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,8 @@
+uuid: b202bea6-08b9-411d-8363-928fe04301b8
+langcode: en
+status: true
+dependencies: {  }
+name: 'Liquid Asset Type'
+vid: liquid_asset_type
+description: ''
+weight: 0

@@ -1,0 +1,9 @@
+uuid: b408fc6a-7ce2-4ef6-b1b3-8f9b069493e9
+langcode: en
+status: true
+dependencies: {  }
+id: debts
+label: Debts
+icon_uuid: null
+description: 'An item to represent a Debt entry from a politicians property declaration'
+behavior_plugins: {  }
