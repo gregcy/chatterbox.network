@@ -1,0 +1,243 @@
+{{ attach_library('bootstrap_barrio/node') }}
+
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+<article{{ attributes.addClass(classes) }}>
+  <header>
+    {{ title_prefix }}
+    {{ title_suffix }}
+    {% if display_submitted %}
+      <div class="node__meta">
+        {{ author_picture }}
+        {% block submitted %}
+          <em{{ author_attributes }}>
+            {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+          </em>
+        {% endblock %}
+        {{ metadata }}
+      </div>
+    {% endif %}
+  </header>
+  <div{{ content_attributes.addClass('node__content', 'clearfix', 'new-form') }}>
+    <h2>Ο ΠΕΡΙ ΤΟΥ ΠΡΟΕΔΡΟΥ, ΤΩΝ ΥΠΟΥΡΓΩΝ ΚΑΙ ΤΩΝ ΒΟΥΛΕΥΤΩΝ ΤΗΣ<br/>ΚΥΠΡΙΑΚΗΣ ΔΗΜΟΚΡΑΤΙΑΣ (ΔΗΛΩΣΗ ΚΑΙ ΕΛΕΓΧΟΣ ΠΕΡΙΟΥΣΙΑΣ) ΝΟΜΟΣ<br/>[ΑΡ.ΝΟΜΟΥ 49(Ι) ΤΟΥ 2004]<br/>(ΠΟΘΕΝ ΕΣΧΕΣ)</h2>
+    <br/>
+    <h2>ΔΗΛΩΣΗ<br/>ΠΕΡΟΥΣΙΑΚΩΝ ΣΤΟΙΧΕΙΩΝ</h2>
+    <br/>
+    <h3>ΜΕΡΟΣ Α'</h3>
+    <h4>ΠΡΟΣΩΠΙΚΑ ΣΤΟΙΧΕΙΑ ΠΡΟΕΔΡΟΥ, ΥΠΟΥΡΓΟΥ Ή ΒΟΥΛΕΥΤΗ</h4>
+    <div class="pothenEsxes-row row">
+      <span class="pothenEsxes-label col-3">Ονοματεπώνυμο</span>
+      <span class="pothenEsxes-colon col-1">:</span>
+      <span class="pothenEsxes-value col-8">{{ content.field_name_and_surname.0 }}</span>
+    </div>
+    <div class="pothenEsxes-row row">
+      <span class="pothenEsxes-label col-3">Ιδιότητα-Αξίωμα</span>
+      <span class="pothenEsxes-colon col-1">:</span>
+      <span class="pothenEsxes-value col-8">{{ content.field_office.0 }}</span>
+    </div>
+    <div class="pothenEsxes-row row">
+      <span class="pothenEsxes-label col-3">Διεύθυνση Κατοικίας</span>
+      <span class="pothenEsxes-colon col-1">:</span>
+      <span class="pothenEsxes-value col-8">{{ content.field_home_address.0 }}</span>
+    </div>
+    <div class="pothenEsxes-row row">
+      <span class="pothenEsxes-label col-3">Τηλέφωνο Κατοικίας</span>
+      <span class="pothenEsxes-colon col-1">:</span>
+      <span class="pothenEsxes-value col-8">{{ content.field_home_phone.0 }}</span>
+    </div>
+    <div class="pothenEsxes-row row">
+      <span class="pothenEsxes-label col-3">Διεύθυνση Εργασίας</span>
+      <span class="pothenEsxes-colon col-1">:</span>
+      <span class="pothenEsxes-value col-8">{{ content.field_work_address.0 }}</span>
+    </div>
+    <div class="pothenEsxes-row row">
+      <span class="pothenEsxes-label col-3">Τηλέφωνο Εργασίας</span>
+      <span class="pothenEsxes-colon col-1">:</span>
+      <span class="pothenEsxes-value col-8">{{ content.field_work_phone.0 }}</span>
+    </div>
+    <div class="pothenEsxes-row row">
+      <span class="pothenEsxes-label col-3">Ημερομηνία Γεννήσεως</span>
+      <span class="pothenEsxes-colon col-1">:</span>
+      <span class="pothenEsxes-value col-8">{{ content.field_dob.0 }}</span>
+    </div>
+    <div class="pothenEsxes-row row">
+      <span class="pothenEsxes-label col-3">Αριθμός Ταυτότητας</span>
+      <span class="pothenEsxes-colon col-1">:</span>
+      <span class="pothenEsxes-value col-8"></span>
+    </div>
+    <div class="pothenEsxes-row row">
+      <span class="pothenEsxes-label col-3">Έγγαμος/Άγαμος</span>
+      <span class="pothenEsxes-colon col-1">:</span>
+      <span class="pothenEsxes-value col-8">{{ content.field_married.0 }}</span>
+    </div>
+    <div class="pothenEsxes-row row">
+      <span class="pothenEsxes-label col-3">Αριθμός ανήλικων τέκνων</span>
+      <span class="pothenEsxes-colon col-1">:</span>
+      <span class="pothenEsxes-value col-8">{{ content.field_number_of_dependents.0 }}</span>
+    </div>
+    <br/>
+    <div class="pothenEsxes-row row">
+      <span class="pothenEsxes-label col-3"></span>
+      <span class="pothenEsxes-colon col-1"></span>
+      <span class="pothenEsxes-label col-3">Υπογραφή:</span>
+      <span class="pothenEsxes-value dotted col-3"></span>
+    </div>
+    <div class="pothenEsxes-row row">
+      <span class="pothenEsxes-label col-3"></span>
+      <span class="pothenEsxes-colon col-1"></span>
+      <span class="pothenEsxes-label col-3">Ημερομηνία:</span>
+      <span class="pothenEsxes-value col-5">{{ content.field_date_of_submission.0 }}</span>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <h3 class="underline">ΜΕΡΟΣ Γ'</h3>
+    <br/>
+    <h4>ΠΕΡΟΥΣΙΑΚΑ ΣΤΟΙΧΕΙΑ ΠΡΟΕΔΡΟΥ, ΥΠΟΥΡΓΟΥ Ή ΒΟΥΛΕΥΤΗ</h4>
+    <h4>(εντός και εκτός της Δημοκρατίας)</h4>
+    <br/>
+    <br/>
+    <h5>1.<span class="underline tab-1">Ακίνητη Ιδιοκτησία</span></h5>
+    {% for key,value in node.field_property_declaration.value %}
+    <div class="pothenEsxes-row tab-2 row">
+      <span class="pothenEsxes-label col-12">-&nbsp&nbsp&nbspΠεριφραφή (τοποθεσία, είδος, έκταση, τοπογραφικά στοιχεία) ακινήτων που βρίσκονται επ' ονόματί του:</span>
+      <span class="pothenEsxes-value col-12 tab-3">Τοποθεσία: {{ content.field_property_declaration[key]['#paragraph'].field_property_location.value}}</span>
+      <span class="pothenEsxes-value col-12 tab-3">Είδος: {{ content.field_property_declaration[key]['#paragraph'].field_property_type.value}}</span>
+      <span class="pothenEsxes-value col-12 tab-3">Έκταση: {{ content.field_property_declaration[key]['#paragraph'].field_property_size.value}}</span>
+      <span class="pothenEsxes-value col-12 tab-3">Τοπογραφικά στοιχεία: {{ content.field_property_declaration[key]['#paragraph'].field_topographic_information.value}}</span>
+      <span class="pothenEsxes-label col-12">-&nbsp&nbsp&nbspΕμπράγματα δικαιώματα και βάρη επ' αυτής:</span>
+      <span class="pothenEsxes-value col-12 tab-3">{{ content.field_property_declaration[key]['#paragraph'].field_rights_and_burdens.value}}</span>
+      <span class="pothenEsxes-label col-12">-&nbsp&nbsp&nbspΤρόπος και χρόνος απόκτησης:</span>
+      <span class="pothenEsxes-value col-12 tab-3">Τρόπος απόκτησης: {{ content.field_property_declaration[key]['#paragraph'].field_acquisition.value}}</span>
+      <span class="pothenEsxes-value col-12 tab-3">Χρόνος απόκτησης: {{ content.field_property_declaration[key]['#paragraph'].field_date_of_acquisition.value}}</span>
+      <span class="pothenEsxes-label col-12">-&nbsp&nbsp&nbspΑξία (κατά τον χρόνο απόκτηςη και τρέχουσα αξία):</span>
+      <span class="pothenEsxes-value col-12 tab-3">Αξία κατά τον χρόνο απόκτησης: {{ content.field_property_declaration[key]['#paragraph'].field_value_of_acquisition.value}}</span>
+      <span class="pothenEsxes-value col-12 tab-3">Τρέχουσα αξία: {{ content.field_property_declaration[key]['#paragraph'].field_current_value.value}}</span>
+    </div>
+    {% endfor %}
+    <br/>
+    <br/>
+    <h5>2.<span class="underline tab-1">Μχανοκίνητα μεταφορικά μέσα (περιλαμβανομένων και σκαφών)</span></h5>
+    {% for key,value in node.field_vehicles.value %}
+    <div class="pothenEsxes-row tab-2 row">
+      <span class="pothenEsxes-label col-12">Περιγραφή και αξία:</span>
+      <span class="pothenEsxes-value col-12 tab-3">Περιγραφή: {{ content.field_vehicles[key]['#paragraph'].field_vehicle_description.value}}</span>
+      <span class="pothenEsxes-value col-12 tab-3">Αξία: {{ content.field_vehicles[key]['#paragraph'].field_vehicle_value.value}}</span>
+    </div>
+    {% endfor %}
+    <br/>
+    <br/>
+    <h5>3.<span class="underline tab-1">Συμμετοχή σε επιχειρήσεις</span></h5>
+    {% for key,value in node.field_company_positions.value %}
+    <div class="pothenEsxes-row tab-2 row">
+      <span class="pothenEsxes-label col-12">Περιγραφή του είδους της συμμετοχής:</span>
+      <span class="pothenEsxes-value col-12 tab-3">Όνομα επιχείρησης: {{ content.field_company_positions[key]['#paragraph'].field_company_name.value }}</span>
+      <span class="pothenEsxes-value col-12 tab-3">Είδος επιχείρησης: {{ content.field_company_positions[key]['#paragraph'].field_company_type.value }}</span>
+      <span class="pothenEsxes-value col-12 tab-3">Είδος συμμετοχής: {{ content.field_company_positions[key]['#paragraph'].field_type_of_participation.value }}</span>
+    </div>
+    {% endfor %}
+    <br/>
+    <br/>
+    <h5>4.<span class="underline tab-1">Εισοδήματα και περιουσιακά στοιχεία σε κινητές αξίες και τίτλους</span></h5>
+    <span class="pothenEsxes-label col-12 tab-2">α.<span class="tab-1">Χρεόγραφα, χρεωστικά ομόλογα, ομολογίες, τίτλοι:</span></span>
+    {% for key,value in node.field_liquid_assets.value %}
+    {% if (content.field_liquid_assets[key]['#paragraph'].field_liquid_asset_type.value[0]['target_id'] == '30465') %}
+    <div class="pothenEsxes-row tab-2 row">
+      <span class="pothenEsxes-value col-12 tab-3">Είδος κινητής αξίας: Χρεόγραφα</span>
+      <span class="pothenEsxes-value col-12 tab-3">Περιγραφή κινητής αξίας: {{ content.field_liquid_assets[key]['#paragraph'].field_liquid_asset_description.value }}</span>
+      <span class="pothenEsxes-value col-12 tab-3">Αριθμός σε κατοχή: {{ content.field_liquid_assets[key]['#paragraph'].field_number_of_assets.value }}</span>
+    </div>
+    {% elseif (content.field_liquid_assets[key]['#paragraph'].field_liquid_asset_type.value[0]['target_id'] == '30466') %}
+    <div class="pothenEsxes-row tab-2 row">
+      <span class="pothenEsxes-value col-12 tab-3">Είδος κινητής αξίας: Χρεωστικά ομόλογα</span>
+      <span class="pothenEsxes-value col-12 tab-3">Περιγραφή κινητής αξίας: {{ content.field_liquid_assets[key]['#paragraph'].field_liquid_asset_description.value }}</span>
+      <span class="pothenEsxes-value col-12 tab-3">Αριθμός σε κατοχή: {{ content.field_liquid_assets[key]['#paragraph'].field_number_of_assets.value }}</span>
+    </div>
+    {% elseif (content.field_liquid_assets[key]['#paragraph'].field_liquid_asset_type.value[0]['target_id'] == '30467') %} 
+    <div class="pothenEsxes-row tab-2 row">
+      <span class="pothenEsxes-value col-12 tab-3">Είδος κινητής αξίας: Ομολογίες</span>
+      <span class="pothenEsxes-value col-12 tab-3">Περιγραφή κινητής αξίας: {{ content.field_liquid_assets[key]['#paragraph'].field_liquid_asset_description.value }}</span>
+      <span class="pothenEsxes-value col-12 tab-3">Αριθμός σε κατοχή: {{ content.field_liquid_assets[key]['#paragraph'].field_number_of_assets.value }}</span>
+    </div>
+    {% elseif (content.field_liquid_assets[key]['#paragraph'].field_liquid_asset_type.value[0]['target_id'] == '30468') %}
+    <div class="pothenEsxes-row tab-2 row">
+      <span class="pothenEsxes-value col-12 tab-3">Είδος κινητής αξίας: Τίτλοι</span>
+      <span class="pothenEsxes-value col-12 tab-3">Περιγραφή κινητής αξίας: {{ content.field_liquid_assets[key]['#paragraph'].field_liquid_asset_description.value }}</span>
+      <span class="pothenEsxes-value col-12 tab-3">Αριθμός σε κατοχή: {{ content.field_liquid_assets[key]['#paragraph'].field_number_of_assets.value }}</span>
+    </div>
+    {% endif %}
+    {% endfor %}
+    <br/>
+    <br/>
+    <span class="pothenEsxes-label col-12 tab-2">β.<span class="tab-1">Μετοχές και μερίσματα σε εταιρείες ιδιωτικές ή δημόσιες και συνεταιρισμούς:</span></span>
+    {% for key1,value1 in node.field_liquid_assets.value %}
+    {% if (content.field_liquid_assets[key1]['#paragraph'].field_liquid_asset_type.value[0]['target_id'] == '30469') %}
+    <div class="pothenEsxes-row tab-2 row">
+      <span class="pothenEsxes-value col-12 tab-3">Είδος κινητής αξίας: Μετοχές</span>
+      <span class="pothenEsxes-value col-12 tab-3">Περιγραφή κινητής αξίας: {{ content.field_liquid_assets[key1]['#paragraph'].field_liquid_asset_description.value }}</span>
+      <span class="pothenEsxes-value col-12 tab-3">Αριθμός σε κατοχή: {{ content.field_liquid_assets[key1]['#paragraph'].field_number_of_assets.value }}</span>
+    </div>
+    {% elseif (content.field_liquid_assets[key1]['#paragraph'].field_liquid_asset_type.value[0]['target_id'] == '30470') %}
+    <div class="pothenEsxes-row tab-2 row">
+      <span class="pothenEsxes-value col-12 tab-3">Είδος κινητής αξίας: Μερίσματα</span>
+      <span class="pothenEsxes-value col-12 tab-3">Περιγραφή κινητής αξίας: {{ content.field_liquid_assets[key1]['#paragraph'].field_liquid_asset_description.value }}</span>
+      <span class="pothenEsxes-value col-12 tab-3">Αριθμός σε κατοχή: {{ content.field_liquid_assets[key1]['#paragraph'].field_number_of_assets.value }}</span>
+    </div>
+    {% endif %}
+    {% endfor %}
+    <br/>
+    <br/>
+    <span class="pothenEsxes-label col-12 tab-2">γ.<span class="tab-1">Καταθέσεις σε τράπεζες, ταμιευτήρια, συνεργατικές εταιρείες:</span></span>
+    {% for key,value in node.field_bank_deposits.value %}
+    <div class="pothenEsxes-row tab-2 row">
+      <span class="pothenEsxes-value col-12 tab-3">Όνομα τραπεζικού οργανισμού/ταμιευτηρίου/συνεργατικής εταιρείας: {{ content.field_bank_deposits[key]['#paragraph'].field_bank_name.value }}</span>
+      <span class="pothenEsxes-value col-12 tab-3">Ποσό καταθέσεων: {{ content.field_bank_deposits[key]['#paragraph'].field_amount.value }}</span>
+    </div>
+    {% endfor %}
+    <br/>
+    <br/>
+    <span class="pothenEsxes-label col-12 tab-2">δ.<span class="tab-1">Ασφαλιστικά συμβόλαια και εισοδήματα ή ωφελήματα που προέρχονται από αυτά:</span></span>
+    {% for key,value in node.field_insurance_policies.value %}
+    <div class="pothenEsxes-row tab-2 row">
+      <span class="pothenEsxes-value col-12 tab-3">Όνομα ασφαλιστικής εταιρείας: {{ content.field_insurance_policies[key]['#paragraph'].field_insurance_company_name.value }}</span>
+      <span class="pothenEsxes-value col-12 tab-3">Αριθμός ασφαλιστικού συμβολαίου: {{ content.field_insurance_policies[key]['#paragraph'].field_insurance_policy_number.value }}</span>
+      <span class="pothenEsxes-value col-12 tab-3">Εισοδήματα ή ωφελήματα: {{ content.field_insurance_policies[key]['#paragraph'].field_insurance_value.value }}</span>
+    </div>
+    {% endfor %}
+    <br/>
+    <br/>
+    <span class="pothenEsxes-label col-12 tab-2">ε.<span class="tab-1">Αλλα εισοδήματα:</span></span>
+    <div class="pothenEsxes-row tab-2 row">
+      <div class="pothenEsxes-value col-12 tab-3">{{ content.field_other_income.0 }}</div>
+    </div>
+    <br/>
+    <br/>
+    <h5>5.<span class="underline tab-1">Εισοδήματα προηγούμενων ετών που αποκτήθηκαν στο διάστημα που μεσολάβησε από την προηγούμενη μέχρι την παρούσα δήλωση</span></h5>
+    <div class="pothenEsxes-row tab-2 row">
+      <div class="pothenEsxes-value col-12 tab-2">{{ content.field_previous_year_income.0 }}</div>
+    </div>
+    <h5>6.<span class="underline tab-1">Χρέη</span></h5>
+    {% for key,value in node.field_debts.value %}
+    <div class="pothenEsxes-row tab-2 row">
+      <span class="pothenEsxes-value col-12 tab-3">Όνομα πιστωτή: {{ content.field_debts[key]['#paragraph'].field_creditor_name.value }}</span>
+      <span class="pothenEsxes-value col-12 tab-3">Είδος χρέους: {{ content.field_debts[key]['#paragraph'].field_debt_type.value }}</span>
+      <span class="pothenEsxes-value col-12 tab-3">Πορό χρέους: {{ content.field_debts[key]['#paragraph'].field_debt_amount.value }}</span>
+    </div>
+    {% endfor %}
+    <br/>
+    <br/>
+    <h5>7.<span class="underline tab-1">Αιτιολόγηση της οποιασδήποτε διαφοροποίησης περουσιακών στοιχείων που μεσολαβεί μεταξύ δύο δηλώσεων</span></h5>
+    <div class="pothenEsxes-row tab-2 row">
+      <div class="pothenEsxes-value col-12 tab-2">{{ content.field_differences_since_last_dec.0 }}</div>
+    </div>
+  </div>
+</article>

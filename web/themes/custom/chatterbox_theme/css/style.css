@@ -1,0 +1,73 @@
+/**
+ * @file
+ * Subtheme specific CSS.
+ */
+
+ .node--type-pothen-esxes h1 {
+    display: none; }
+  
+  .node--type-pothen-esxes h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.5; }
+  
+  .node--type-pothen-esxes h3 {
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center; }
+  
+  .node--type-pothen-esxes h4 {
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center; }
+  
+  .node--type-pothen-esxes h5 {
+    font-size: 1em;
+    font-weight: bold; }
+  
+  .node--type-pothen-esxes .tab-1 {
+    margin-left: 15px; }
+  
+  .node--type-pothen-esxes .tab-2 {
+    margin-left: 30px; }
+  
+  .node--type-pothen-esxes .tab-3 {
+    margin-left: 45px; }
+  
+  .node--type-pothen-esxes .tab-4 {
+    margin-left: 60px; }
+  
+  .node--type-pothen-esxes .underline {
+    text-decoration: underline; }
+  
+  .node--type-pothen-esxes .pothenEsxes-label {
+    font-size: 1em;
+    font-weight: bold; }
+  
+  .node--type-pothen-esxes .pothenEsxes-colon {
+    font-weight: bold; }
+  
+  .node--type-pothen-esxes .pothenEsxes-row {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em; }
+  
+  .node--type-pothen-esxes .dotted {
+    border-bottom: dotted 1px black; }
+    .node--type-pothen-esxes .dotted p {
+      border-bottom: dotted 1px black; }
+  
+  .node--type-pothen-esxes .divborder {
+    border: solid 1px black; }
+  
+  .node--type-pothen-esxes td {
+    padding: 5px; }
+  
+  .node--type-pothen-esxes table.pothenEsxes-table {
+    border: solid 1px black;
+    margin-bottom: 2em;
+    table-layout: fixed;
+    margin-left: 45px; }
+    .node--type-pothen-esxes table.pothenEsxes-table td {
+      border: solid 1px black; }
+  
