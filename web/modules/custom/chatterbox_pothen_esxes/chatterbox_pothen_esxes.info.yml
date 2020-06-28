@@ -1,0 +1,6 @@
+name: Pothen Esxes project module
+type: module
+description: 'Module for Pothen Esxes Project'
+package: Custom
+version: 8.x
+core: 8.x
