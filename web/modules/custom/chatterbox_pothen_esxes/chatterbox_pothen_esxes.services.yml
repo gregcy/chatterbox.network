@@ -1,5 +1,6 @@
 services: 
-  example_normalizer.typed_data: 
-    class: Drupal\chatterbox_pothen_esxes\Normalizer\CustomTypedDataNormalizer 
-    tags: 
-    - { name: normalizer, priority: 2 }
+  chatterbox_pothen_esxes.node_entity:
+    class: Drupal\chatterbox_pothen_esxes\Normalizer\PothenEsxesNodeEntityNormalizer
+    arguments: ['@entity.manager']
+    tags:
+    - { name: normalizer, priority: 8 }
