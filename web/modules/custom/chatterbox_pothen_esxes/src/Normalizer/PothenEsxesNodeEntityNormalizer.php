@@ -72,15 +72,24 @@ class PothenEsxesNodeEntityNormalizer extends ContentEntityNormalizer {
 
     // Part A
     $partA = array();
-    $perosnalData = array();
 
-    $perosnalDataName = '';
+    $personalData = array();
+    $personalDataName = '';
+    $personalDataOffice = '';
 
     $partA['label'] = "Μέρος Α'";
     $partA['order'] = 1;
     $partA['title'] ="ΠΡΟΣΩΠΙΚΑ ΣΤΟΙΧΕΙΑ ΠΡΟΕΔΡΟΥ, ΥΠΟΥΡΓΟΥ Ή ΒΟΥΛΕΥΤΗ ΤΗΣ ΚΥΠΡΙΑΚΗΣ ΔΗΜΟΚΡΑΤΙΑΣ";
-    $partA['personalData'] = $perosnalData;
- 
+    // Part A - Personal Data
+    if (!is_null($entity->field_name_and_surname)) {
+      $personalDataName = $entity->field_name_and_surname->getValue()[0]['value'];
+      $personalData['name'] = array('label' => 'Ονοματεπώνυμο', 'value'=> $personalDataName);
+    }
+    if (!is_null($entity->field_office)) {
+      $personalDataOffice = $entity->field_office->getValue()[0]['value'];
+      $personalData['office'] = array('label' => 'Ιδιότητα - Αξίωμα', 'value'=> $personalDataOffice);
+    }
+    $partA['personalData'] = $personalData;
 
     $new_attributes['metadata'] = $metadata;
     $new_attributes['part'] = array($partA);
