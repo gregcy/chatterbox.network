@@ -35,8 +35,13 @@ class PothenEsxesNodeEntityNormalizer extends ContentEntityNormalizer {
        
     $new_attributes = array();
     $title = $entity->getTitle();
+    var_dump ($entity->field_political_affiliation->first());exit;
+    $politicalAffiliation = $entity->field_political_affiliation->first()->getValue();
 
-    $new_attributes['metadata'] = array('title' => $title);
+    $new_attributes['metadata'] = array(
+      'title' => $title,
+      'politicalAffiliation' => $politicalAffiliation
+    );
 
     // Return the $attributes with our new values.
     return $new_attributes;
