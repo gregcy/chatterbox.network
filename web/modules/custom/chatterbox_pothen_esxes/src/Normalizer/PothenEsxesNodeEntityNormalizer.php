@@ -4,6 +4,9 @@
 
   use Drupal\serialization\Normalizer\ContentEntityNormalizer;
   use Drupal\node\NodeInterface;
+  use Drupal\taxonomy\Entity\Term;
+  use Drupal\media\Entity\Media;
+  use Drupal\file\Entity\File;
 
 /** 
 * Converts the Drupal entity object structures to a normalized array. 
@@ -34,14 +37,53 @@ class PothenEsxesNodeEntityNormalizer extends ContentEntityNormalizer {
   public function normalize($entity, $format = NULL, array $context = array()) {
        
     $new_attributes = array();
+    
+    // Metadata Element
+    $metadata = array();
+    $politicalAffiliation = '';
+    $biographyLink = '';
+    $imageURL = '';
+    $wikimediaId = '';
+    
     $title = $entity->getTitle();
-    var_dump ($entity->field_political_affiliation->first());exit;
-    $politicalAffiliation = $entity->field_political_affiliation->first()->getValue();
+    if (!is_null($entity->field_political_affiliation->first())) {
+      $politicalAffiliation_tid = $entity->field_political_affiliation->first()->getValue()['target_id'];
+      $politicalAffiliation = Term::load($politicalAffiliation_tid);
+      $politicalAffiliation = $politicalAffiliation->getName();
+    }
+    if (!is_null($entity->field_biography)) {
+      $biographyLink = $entity->field_biography->first()->getValue()['uri'];
+    }
+    if (!is_null($entity->field_politician_image)) {
+      $media_id = $entity->field_politician_image->first()->getValue()['target_id'];
+      $media = Media::load($media_id);
+      $fid = $media->field_media_image->target_id;
+      $file = File::Load($fid);
+      $imageURL = $file->url();
+    }
+    if (!is_null($entity->field_wikidata_entity_id)){
+      $wikimediaId = $entity->field_wikidata_entity_id->getValue()[0]['value'];      
+    }
+    $metadata['title'] = $title;
+    $metadata['politicalAffiliation'] =$politicalAffiliation;
+    $metadata['biographyLink'] = $biographyLink;
+    $metadata['image'] = $imageURL;
+    $metadata['wikimediaId'] = $wikimediaId;
 
-    $new_attributes['metadata'] = array(
-      'title' => $title,
-      'politicalAffiliation' => $politicalAffiliation
-    );
+    // Part A
+    $partA = array();
+    $perosnalData = array();
+
+    $perosnalDataName = '';
+
+    $partA['label'] = "Μέρος Α'";
+    $partA['order'] = 1;
+    $partA['title'] ="ΠΡΟΣΩΠΙΚΑ ΣΤΟΙΧΕΙΑ ΠΡΟΕΔΡΟΥ, ΥΠΟΥΡΓΟΥ Ή ΒΟΥΛΕΥΤΗ ΤΗΣ ΚΥΠΡΙΑΚΗΣ ΔΗΜΟΚΡΑΤΙΑΣ";
+    $partA['personalData'] = $perosnalData;
+ 
+
+    $new_attributes['metadata'] = $metadata;
+    $new_attributes['part'] = array($partA);
 
     // Return the $attributes with our new values.
     return $new_attributes;
