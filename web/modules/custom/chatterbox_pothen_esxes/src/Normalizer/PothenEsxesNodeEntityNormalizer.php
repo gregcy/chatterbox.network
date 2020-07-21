@@ -7,6 +7,8 @@
   use Drupal\taxonomy\Entity\Term;
   use Drupal\media\Entity\Media;
   use Drupal\file\Entity\File;
+  use Drupal\Core\Datetime;
+use Drupal\Core\Datetime\DateFormatter;
 
 /** 
 * Converts the Drupal entity object structures to a normalized array. 
@@ -76,6 +78,9 @@ class PothenEsxesNodeEntityNormalizer extends ContentEntityNormalizer {
     $personalData = array();
     $personalDataName = '';
     $personalDataOffice = '';
+    $perosnalDataAddress = '';
+    $personalDOB = '';
+    $personalDOBMeta = '';
 
     $partA['label'] = "Μέρος Α'";
     $partA['order'] = 1;
@@ -83,12 +88,25 @@ class PothenEsxesNodeEntityNormalizer extends ContentEntityNormalizer {
     // Part A - Personal Data
     if (!is_null($entity->field_name_and_surname)) {
       $personalDataName = $entity->field_name_and_surname->getValue()[0]['value'];
-      $personalData['name'] = array('label' => 'Ονοματεπώνυμο', 'value'=> $personalDataName);
+      $personalData['name'] = array('label' => 'Ονοματεπώνυμο', 'value' => $personalDataName);
     }
     if (!is_null($entity->field_office)) {
       $personalDataOffice = $entity->field_office->getValue()[0]['value'];
-      $personalData['office'] = array('label' => 'Ιδιότητα - Αξίωμα', 'value'=> $personalDataOffice);
+      $personalData['office'] = array('label' => 'Ιδιότητα - Αξίωμα', 'value' => $personalDataOffice);
     }
+    if(!is_null($entity->field_home_address)) {
+      $perosnalDataAddress = $entity->field_home_address->getValue()[0]['value'];
+      $personalData['addressHome'] = array('label' => 'Διεύθυνση κατοικίας', 'value' => $perosnalDataAddress);
+    }
+    if (!is_null($entity->field_dob)) {
+      $personalDOB = $entity->field_dob->getValue()[0]['value'];
+      $personalData['DOB'] = array('label' => 'Ημερομηνία γεννήσεως', 'value' => $personalDOB);
+    }
+    if (!is_null($entity->field_meta_dob)) {
+      $personalDOBMeta = $entity->field_meta_dob;
+      $personalDOBMeta = DateFormatter::format($personalDOBMeta->getTimestamp(), 'html_datetime');
+      var_dump($personalDOBMeta);exit;
+
     $partA['personalData'] = $personalData;
 
     $new_attributes['metadata'] = $metadata;
