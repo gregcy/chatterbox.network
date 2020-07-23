@@ -7,8 +7,8 @@
   use Drupal\taxonomy\Entity\Term;
   use Drupal\media\Entity\Media;
   use Drupal\file\Entity\File;
-  use Drupal\Core\Datetime;
-use Drupal\Core\Datetime\DateFormatter;
+  use Drupal\Core\Datetime\DrupalDateTime;
+  use Drupal\Core\Datetime\DateFormatter;
 
 /** 
 * Converts the Drupal entity object structures to a normalized array. 
@@ -100,13 +100,12 @@ class PothenEsxesNodeEntityNormalizer extends ContentEntityNormalizer {
     }
     if (!is_null($entity->field_dob)) {
       $personalDOB = $entity->field_dob->getValue()[0]['value'];
-      $personalData['DOB'] = array('label' => 'Ημερομηνία γεννήσεως', 'value' => $personalDOB);
+      $personalDOBMeta = $entity->field_meta_dob->getValue()[0]['value'];
+      $personalDOBMeta = DrupalDateTime::createFromFormat('Y-m-d',$personalDOBMeta, null);
+      $personalDOBMeta = \Drupal::service('date.formatter')->format($personalDOBMeta->getTimestamp(), 'html_datetime');
+      $personalData['DOB'] = array('label' => 'Ημερομηνία γεννήσεως', 'value' => $personalDOB, 'metaValue' => $personalDOBMeta);
     }
-    if (!is_null($entity->field_meta_dob)) {
-      $personalDOBMeta = $entity->field_meta_dob;
-      $personalDOBMeta = DateFormatter::format($personalDOBMeta->getTimestamp(), 'html_datetime');
-      var_dump($personalDOBMeta);exit;
-
+    $personalData['id'] = array('label' => 'Αριθμός Ταυτότητας', 'value' => '');
     $partA['personalData'] = $personalData;
 
     $new_attributes['metadata'] = $metadata;
