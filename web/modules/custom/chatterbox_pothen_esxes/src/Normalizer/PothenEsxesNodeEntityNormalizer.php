@@ -53,10 +53,10 @@ class PothenEsxesNodeEntityNormalizer extends ContentEntityNormalizer {
       $politicalAffiliation = Term::load($politicalAffiliation_tid);
       $politicalAffiliation = $politicalAffiliation->getName();
     }
-    if (!is_null($entity->field_biography)) {
+    if (!is_null($entity->field_biography->first())) {
       $biographyLink = $entity->field_biography->first()->getValue()['uri'];
     }
-    if (!is_null($entity->field_politician_image)) {
+    if (!is_null($entity->field_politician_image->first())) {
       $media_id = $entity->field_politician_image->first()->getValue()['target_id'];
       $media = Media::load($media_id);
       $fid = $media->field_media_image->target_id;
@@ -85,31 +85,39 @@ class PothenEsxesNodeEntityNormalizer extends ContentEntityNormalizer {
     $personalMarriedMeta = '';
     $personalNoOfDependants = '';
     $personalNoOfDependantsMeta = '';
+    $personaldateOfSubmission = '';
+    $personaldateOfSubmissionMeta = '';
 
     $partA['label'] = "Μέρος Α'";
     $partA['order'] = 1;
     $partA['title'] ="ΠΡΟΣΩΠΙΚΑ ΣΤΟΙΧΕΙΑ ΠΡΟΕΔΡΟΥ, ΥΠΟΥΡΓΟΥ Ή ΒΟΥΛΕΥΤΗ ΤΗΣ ΚΥΠΡΙΑΚΗΣ ΔΗΜΟΚΡΑΤΙΑΣ";
     // Part A - Personal Data
+    // Name and Surname
     if (!is_null($entity->field_name_and_surname)) {
       $personalDataName = $entity->field_name_and_surname->getValue()[0]['value'];
     }
     $personalData['name'] = array('label' => 'Ονοματεπώνυμο', 'value' => $personalDataName);
+    // Office
     if (!is_null($entity->field_office)) {
       $personalDataOffice = $entity->field_office->getValue()[0]['value'];
     }
     $personalData['office'] = array('label' => 'Ιδιότητα - Αξίωμα', 'value' => $personalDataOffice);
-    if(!is_null($entity->field_home_address)) {
+    // Home Address
+    if(sizeof($entity->field_home_address->getValue())> 0) {
       $perosnalDataAddress = $entity->field_home_address->getValue()[0]['value'];
     }
     $personalData['addressHome'] = array('label' => 'Διεύθυνση κατοικίας', 'value' => $perosnalDataAddress);
-    if (!is_null($entity->field_dob)) {
+    // Date of Birth
+    if (sizeof($entity->field_dob->getValue()) > 0 ) {
       $personalDOB = $entity->field_dob->getValue()[0]['value'];
       $personalDOBMeta = $entity->field_meta_dob->getValue()[0]['value'];
       $personalDOBMeta = DrupalDateTime::createFromFormat('Y-m-d',$personalDOBMeta, null);
       $personalDOBMeta = \Drupal::service('date.formatter')->format($personalDOBMeta->getTimestamp(), 'html_datetime');
     }
     $personalData['DOB'] = array('label' => 'Ημερομηνία γεννήσεως', 'value' => $personalDOB, 'metaValue' => $personalDOBMeta);
+    // ID Number
     $personalData['id'] = array('label' => 'Αριθμός Ταυτότητας', 'value' => '');
+    // Marital Status
     if (!is_null($entity->field_married)) {
       $personalMarried = $entity->field_married->getValue()[0]['value'];
       $personalMarriedMeta = $entity->field_married_meta->getValue()[0]['value'];
@@ -121,10 +129,21 @@ class PothenEsxesNodeEntityNormalizer extends ContentEntityNormalizer {
       }
     }
     $personalData['maritalStatus'] = array('label' => 'Έγγαμος/Άγαμος', 'value' => $personalMarried, 'metaValue' => $personalMarriedMeta);
-    
-
+    // Number of Dependants
+    if (!is_null($entity->field_number_of_dependents)) {
+      $personalNoOfDependants = $entity->field_number_of_dependents->getValue()[0]['value'];
+      $personalNoOfDependantsMeta = (int) $entity->field_number_of_dependents_meta->getValue()[0]['value'];
+    }
     $personalData['noOfDependants'] = array('label' => 'Αριθμός ανήλικων τέκνων', 'value' => $personalNoOfDependants, 'metaValue'=> $personalNoOfDependantsMeta);
-    
+    // Date of Submission
+    if (!is_null($entity->field_date_of_submission)) {
+      $personaldateOfSubmission = $entity->field_date_of_submission->getValue()[0]['value'];
+      $personaldateOfSubmissionMeta = $entity->field_date_of_submission_meta->getValue()[0]['value'];
+      $personaldateOfSubmissionMeta = DrupalDateTime::createFromFormat('Y-m-d',$personaldateOfSubmissionMeta, null);
+      $personaldateOfSubmissionMeta = \Drupal::service('date.formatter')->format($personaldateOfSubmissionMeta->getTimestamp(), 'html_datetime');
+    }
+    $personalData['dateOfSubmission'] = array('label' => 'Ημερομηνία', 'value' => $personaldateOfSubmission, 'metaValue' => $personaldateOfSubmissionMeta);
+ 
     $partA['personalData'] = $personalData;
 
     $new_attributes['metadata'] = $metadata;
