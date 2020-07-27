@@ -36,6 +36,7 @@
         "drupal/pathauto": "^1.4",
         "drupal/quick_node_clone": "^1.12",
         "drupal/restui": "^1.18",
+        "drupal/upgrade_status": "^2.9",
         "drupal/view_mode_page": "^4.0",
         "drush/drush": "^9.0.0",
         "vlucas/phpdotenv": "^2.4",
