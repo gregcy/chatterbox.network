@@ -81,6 +81,10 @@ class PothenEsxesNodeEntityNormalizer extends ContentEntityNormalizer {
     $perosnalDataAddress = '';
     $personalDOB = '';
     $personalDOBMeta = '';
+    $personalMarried = '';
+    $personalMarriedMeta = '';
+    $personalNoOfDependants = '';
+    $personalNoOfDependantsMeta = '';
 
     $partA['label'] = "Μέρος Α'";
     $partA['order'] = 1;
@@ -88,24 +92,39 @@ class PothenEsxesNodeEntityNormalizer extends ContentEntityNormalizer {
     // Part A - Personal Data
     if (!is_null($entity->field_name_and_surname)) {
       $personalDataName = $entity->field_name_and_surname->getValue()[0]['value'];
-      $personalData['name'] = array('label' => 'Ονοματεπώνυμο', 'value' => $personalDataName);
     }
+    $personalData['name'] = array('label' => 'Ονοματεπώνυμο', 'value' => $personalDataName);
     if (!is_null($entity->field_office)) {
       $personalDataOffice = $entity->field_office->getValue()[0]['value'];
-      $personalData['office'] = array('label' => 'Ιδιότητα - Αξίωμα', 'value' => $personalDataOffice);
     }
+    $personalData['office'] = array('label' => 'Ιδιότητα - Αξίωμα', 'value' => $personalDataOffice);
     if(!is_null($entity->field_home_address)) {
       $perosnalDataAddress = $entity->field_home_address->getValue()[0]['value'];
-      $personalData['addressHome'] = array('label' => 'Διεύθυνση κατοικίας', 'value' => $perosnalDataAddress);
     }
+    $personalData['addressHome'] = array('label' => 'Διεύθυνση κατοικίας', 'value' => $perosnalDataAddress);
     if (!is_null($entity->field_dob)) {
       $personalDOB = $entity->field_dob->getValue()[0]['value'];
       $personalDOBMeta = $entity->field_meta_dob->getValue()[0]['value'];
       $personalDOBMeta = DrupalDateTime::createFromFormat('Y-m-d',$personalDOBMeta, null);
       $personalDOBMeta = \Drupal::service('date.formatter')->format($personalDOBMeta->getTimestamp(), 'html_datetime');
-      $personalData['DOB'] = array('label' => 'Ημερομηνία γεννήσεως', 'value' => $personalDOB, 'metaValue' => $personalDOBMeta);
     }
+    $personalData['DOB'] = array('label' => 'Ημερομηνία γεννήσεως', 'value' => $personalDOB, 'metaValue' => $personalDOBMeta);
     $personalData['id'] = array('label' => 'Αριθμός Ταυτότητας', 'value' => '');
+    if (!is_null($entity->field_married)) {
+      $personalMarried = $entity->field_married->getValue()[0]['value'];
+      $personalMarriedMeta = $entity->field_married_meta->getValue()[0]['value'];
+      if ($personalMarriedMeta == 1 ) {
+        $personalMarriedMeta = 'Έγγαμος';
+      }
+      else if ($personalMarriedMeta == 0) {
+        $personalMarriedMeta = 'Άγαμος';
+      }
+    }
+    $personalData['maritalStatus'] = array('label' => 'Έγγαμος/Άγαμος', 'value' => $personalMarried, 'metaValue' => $personalMarriedMeta);
+    
+
+    $personalData['noOfDependants'] = array('label' => 'Αριθμός ανήλικων τέκνων', 'value' => $personalNoOfDependants, 'metaValue'=> $personalNoOfDependantsMeta);
+    
     $partA['personalData'] = $personalData;
 
     $new_attributes['metadata'] = $metadata;
