@@ -48,23 +48,36 @@ class PothenEsxesNodeEntityNormalizer extends ContentEntityNormalizer {
     $wikimediaId = '';
     
     $title = $entity->getTitle();
-    if (!is_null($entity->field_political_affiliation->first())) {
-      $politicalAffiliation_tid = $entity->field_political_affiliation->first()->getValue()['target_id'];
-      $politicalAffiliation = Term::load($politicalAffiliation_tid);
+    // Political Affiliation
+    $politicalAffiliation = $entity->field_political_affiliation->entity;
+    if (is_null($politicalAffiliation)) {
+      $politicalAffiliation = '';
+    }
+    else {
       $politicalAffiliation = $politicalAffiliation->getName();
     }
-    if (!is_null($entity->field_biography->first())) {
-      $biographyLink = $entity->field_biography->first()->getValue()['uri'];
+    // Biography
+    $biographyLink = $entity->field_biography->first();
+    if (is_null($biographyLink)) {
+      $biographyLink = '';
     }
-    if (!is_null($entity->field_politician_image->first())) {
-      $media_id = $entity->field_politician_image->first()->getValue()['target_id'];
-      $media = Media::load($media_id);
-      $fid = $media->field_media_image->target_id;
+    else {
+      $biographyLink = $biographyLink->getUrl()->getUri();
+    }
+    // Image
+    $imageURL = $entity->field_politician_image->entity;
+    if (is_null($imageURL)) {
+      $imageURL = '';
+    }
+    else {
+      $fid = $imageURL->field_media_image->target_id;
       $file = File::Load($fid);
       $imageURL = $file->url();
     }
-    if (!is_null($entity->field_wikidata_entity_id)){
-      $wikimediaId = $entity->field_wikidata_entity_id->getValue()[0]['value'];      
+    // Wikimedia Id
+    $wikimediaId = $entity->get('field_wikidata_entity_id')->value;
+    if (is_null($wikimediaId)) {
+      $wikimediaId = '';     
     }
     $metadata['title'] = $title;
     $metadata['politicalAffiliation'] =$politicalAffiliation;
@@ -93,46 +106,60 @@ class PothenEsxesNodeEntityNormalizer extends ContentEntityNormalizer {
     $partA['title'] ="ΠΡΟΣΩΠΙΚΑ ΣΤΟΙΧΕΙΑ ΠΡΟΕΔΡΟΥ, ΥΠΟΥΡΓΟΥ Ή ΒΟΥΛΕΥΤΗ ΤΗΣ ΚΥΠΡΙΑΚΗΣ ΔΗΜΟΚΡΑΤΙΑΣ";
     // Part A - Personal Data
     // Name and Surname
-    if (!is_null($entity->field_name_and_surname)) {
-      $personalDataName = $entity->field_name_and_surname->getValue()[0]['value'];
+    $personalDataName = $entity->get('field_name_and_surname')->value;
+    if (is_null($personalDataName)) {
+      $personalDataName = '';
     }
     $personalData['name'] = array('label' => 'Ονοματεπώνυμο', 'value' => $personalDataName);
     // Office
-    if (!is_null($entity->field_office)) {
-      $personalDataOffice = $entity->field_office->getValue()[0]['value'];
+    $personalDataOffice = $entity->get('field_office')->value;
+    if (is_null($personalDataOffice)) {
+      $personalDataOffice = '';
     }
     $personalData['office'] = array('label' => 'Ιδιότητα - Αξίωμα', 'value' => $personalDataOffice);
     // Home Address
-    if(sizeof($entity->field_home_address->getValue())> 0) {
-      $perosnalDataAddress = $entity->field_home_address->getValue()[0]['value'];
+    $perosnalDataAddress = $entity->get('field_home_address')->value;
+    if (is_null($perosnalDataAddress)) {
+      $perosnalDataAddress = '';
     }
     $personalData['addressHome'] = array('label' => 'Διεύθυνση κατοικίας', 'value' => $perosnalDataAddress);
     // Date of Birth
-    if (sizeof($entity->field_dob->getValue()) > 0 ) {
-      $personalDOB = $entity->field_dob->getValue()[0]['value'];
-      $personalDOBMeta = $entity->field_meta_dob->getValue()[0]['value'];
-      $personalDOBMeta = DrupalDateTime::createFromFormat('Y-m-d',$personalDOBMeta, null);
+    $personalDOB = $entity->get('field_dob')->value;
+    if(is_null($personalDOB)) {
+      $personalDOB = '';
+    }
+    $personalDOBMeta = $entity->get('field_meta_dob')->value;
+    if (is_null($personalDOBMeta)) {
+      $personalDOBMeta = '';
+    }
+    else {
+      $personalDOBMeta = DrupalDateTime::createFromFormat('Y-m-d H:i',$personalDOBMeta . ' 00:00', null);
       $personalDOBMeta = \Drupal::service('date.formatter')->format($personalDOBMeta->getTimestamp(), 'html_datetime');
     }
     $personalData['DOB'] = array('label' => 'Ημερομηνία γεννήσεως', 'value' => $personalDOB, 'metaValue' => $personalDOBMeta);
     // ID Number
     $personalData['id'] = array('label' => 'Αριθμός Ταυτότητας', 'value' => '');
     // Marital Status
-    if (!is_null($entity->field_married)) {
-      $personalMarried = $entity->field_married->getValue()[0]['value'];
-      $personalMarriedMeta = $entity->field_married_meta->getValue()[0]['value'];
-      if ($personalMarriedMeta == 1 ) {
-        $personalMarriedMeta = 'Έγγαμος';
-      }
-      else if ($personalMarriedMeta == 0) {
-        $personalMarriedMeta = 'Άγαμος';
-      }
+    $personalMarried = $entity->get('field_married')->value;
+    if (is_null($personalMarried)) {
+      $personalMarried = '';
+    }
+    $personalMarriedMeta = $entity->get('field_married_meta')->value;
+    if ($personalMarriedMeta == 1 ) {
+      $personalMarriedMeta = 'Έγγαμος';
+    }
+    else if ($personalMarriedMeta == 0) {
+      $personalMarriedMeta = 'Άγαμος';
     }
     $personalData['maritalStatus'] = array('label' => 'Έγγαμος/Άγαμος', 'value' => $personalMarried, 'metaValue' => $personalMarriedMeta);
     // Number of Dependants
-    if (!is_null($entity->field_number_of_dependents)) {
-      $personalNoOfDependants = $entity->field_number_of_dependents->getValue()[0]['value'];
-      $personalNoOfDependantsMeta = (int) $entity->field_number_of_dependents_meta->getValue()[0]['value'];
+    $personalNoOfDependants = $entity->get('field_number_of_dependents')->value;
+    if (is_null($personalNoOfDependants)) {
+      $personalNoOfDependants = '';
+    }
+    $personalNoOfDependantsMeta = (int) $entity->get('field_number_of_dependents_meta')->value;
+    if (is_null($personalNoOfDependantsMeta)) {
+      $personalNoOfDependantsMeta = '';
     }
     $personalData['noOfDependants'] = array('label' => 'Αριθμός ανήλικων τέκνων', 'value' => $personalNoOfDependants, 'metaValue'=> $personalNoOfDependantsMeta);
     // Date of Submission
